@@ -7,6 +7,13 @@ server.set('port', process.env.PORT || '3000')
 
 server.use(bodyParser.json())
 
+// adding headers so we can serve cors requests
+server.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 server.get('/ping', (request, response, next) => {
   response.send('pong')
 })

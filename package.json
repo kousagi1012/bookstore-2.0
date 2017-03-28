@@ -11,6 +11,7 @@
     "npm": ">=3.10.8"
   },
   "scripts": {
+    "start": "nodemon server/index.js",
     "test": "mocha ./test/setup.js --recursive test/ || true"
   },
   "repository": {
@@ -26,7 +27,9 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "pg-promise": "^5.3.2"
+    "pg-promise": "^5.3.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "babel": "^6.23.0",
