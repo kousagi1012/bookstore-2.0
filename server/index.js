@@ -61,7 +61,6 @@ server.get('/api/books', (request, response) => {
 server.get( '/api/books/:id', ( request, response ) => {
   db.getBook( request.params.id )
     .then( book => response.json(book))
-    console.log('book', book)
     .catch( error => response.status( 404 ).json() )
 })
 
