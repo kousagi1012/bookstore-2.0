@@ -1,0 +1,103 @@
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.book{
+	display:flex;
+	flex-direction: column;
+}
+
+.section {
+	margin: 2% 0;
+	height: auto;
+	width: 260px;
+}
+/*
+.middleDiv {
+	margin: 2% 0 0 0;
+}*/
+.genere_title_div{
+	width: 260px;
+	height:250px;
+	background-color: red;
+	display:flex;
+	flex-direction: column;
+
+}
+.author_name{
+	width: 200px;
+	height:90px;
+	background-color: green;
+}
+.author_div{
+	width:260px;
+	height: 120px;
+	background-color: red;
+	display:flex;
+	justify-content: center;
+
+}
+.title_div{
+	width:260px;
+	height:130px;
+	justify-content: center;
+	align-items: center;
+}
+.delete_button{
+	border-radius: 3em;
+	height:50px;
+	width:50px;
+	justify-content: center;
+	align-items: center;
+}
+.delete_div{
+	width:90px;
+	height:90px;
+	background-color: ;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 80px;
+	flex-direction: column;
+}
+.container_edit_div{
+	display:flex;
+	align-self: flex-start;
+	align-content:center;
+
+}
+.edit_div{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	width:200px;
+}
+.year_div{
+	background-color: orange;
+	width:36px;
+	height:70px;
+	align-content: flex-end;
+	flex-direction: row;
+	z-index: 10;
+	margin-bottom: 32px;
+
+}
+.edit_button{
+	border-radius: 3em;
+	height:50px;
+	width:50px;
+	justify-content: center;
+	align-items: center;
+	margin-left: 10px;
+	margin-top:21px;
+
+}
+.genere_div{
+	width:200px;
+	height:50px;
+	background-color: green;
+	margin-top: 18px;
+}
