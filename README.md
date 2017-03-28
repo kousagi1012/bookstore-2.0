@@ -1,6 +1,8 @@
 # bookstore-2.0
 Bookstore with full CRUD using react, express, postgres, pg-promise, mocha-chai
 
+![29464aa3c5800484f4577ca0c53f8953](https://cloud.githubusercontent.com/assets/17223371/24419406/da9155d0-13a3-11e7-9e1d-f785a58643e2.jpg)
+
 ## Context
 
 Many of the seemingly fancy apps on the web have functionality that can be reduced to just 4 simple operations: Create, Read, Update, and Delete (or CRUD for short). At their core, they are really just ways to perform these operations on some resource.
