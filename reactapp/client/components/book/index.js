@@ -2,10 +2,37 @@ import React, { Component } from 'react'
 import style from './style.css'
 
 export default class Book extends Component {
+  constructor(props) {
+    super(props)
+  }
 
   render() {
+    console.log('this.props.showFormStatus', this.props.showFormStatus)
     return (
         <div className="book">
+          {
+            !this.props.showFormStatus
+              ? <form className="add-book-form" onSubmit={ this.handleSubmit }>
+                  <input className="add-book-input"
+                    onChange={ this.setValue.bind( this, 'title' ) }
+                    placeholder="Book Genre"></input>
+
+                  <input className="add-book-input"
+                    onChange={ this.setValue.bind( this, 'author' ) }
+                    placeholder="Book Author"></input>
+
+                  <input className="add-book-input"
+                    onChange={ this.setValue.bind( this, 'genre' ) }
+                    placeholder="Book Year"></input>
+
+                  <input className="add-book-input"
+                    onChange={ this.setValue.bind( this, 'img_url' ) }
+                    placeholder="Book Author"></input>
+
+                  <input type="submit" value="Submit" />
+                </form>
+                : ''
+          }
           <div className="topDiv section">
             <div className="genere_title_div">
               <div className="genere_div">
@@ -16,7 +43,7 @@ export default class Book extends Component {
               </div>
               <div className="container_edit_div">
                 <div className="edit_div">
-                  <button className="edit_button" type="button" name="edit">edit</button>
+                  <button className="edit_button" onClick={() => this.props.showForm()} type="button" name="edit">edit</button>
                 </div>
                 <div className="year_div">
                   <div className="year">{this.props.book.year}</div>
