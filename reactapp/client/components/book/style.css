@@ -1,3 +1,7 @@
+.book{
+	margin-left: 50px;
+	margin-right: 50px;
+}
 .appTitle{
 color:#F5F5F5;
 font-size: 25px;
@@ -6,9 +10,11 @@ font-size: 25px;
 	display: flex;
 	flex-direction: row;
 	width:1000px;
-	flex-wrap: wrap;
+	/*flex-wrap: wrap;*/
 	justify-content: space-between;
 	margin-left: 120px;
+	overflow-x:auto;
+	padding-left: 10px;
 }
 .year{
 	color:#F5F5F5;
@@ -25,7 +31,8 @@ font-size: 25px;
 }
 
 .section {
-	margin: 2% 0;
+
+	margin: 4%;
 	height: auto;
 	width: 260px;
 }
@@ -118,7 +125,6 @@ font-size: 25px;
 	height:70px;
 	align-content: flex-end;
 	flex-direction: row;
-	z-index: 10;
 	margin-bottom: 32px;
 
 }
