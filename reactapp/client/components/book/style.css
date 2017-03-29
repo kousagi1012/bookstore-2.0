@@ -1,9 +1,24 @@
+.appTitle{
+color:#F5F5F5;
+font-size: 25px;
+}
 .mainContainer {
 	display: flex;
-	flex-direction: column;
-
+	flex-direction: row;
+	width:1000px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: 120px;
 }
-
+.year{
+	color:#F5F5F5;
+	font-size: 14px;
+	font-style: bold;
+}
+.genere_text{
+	color:#F5F5F5;
+	font-size: 12px;
+}
 .book{
 	display:flex;
 	flex-direction: column;
@@ -21,20 +36,29 @@
 .genere_title_div{
 	width: 260px;
 	height:250px;
-	background-color: red;
+	background-color: #F5F5F5;
 	display:flex;
 	flex-direction: column;
+	outline-color: #3897f0;
+	outline-style: solid;
+	outline-width: 5px;
 
 }
 .author_name{
 	width: 200px;
-	height:90px;
-	background-color: green;
+	height:10px;
+	background-color: #F5F5F5;
+	padding:.3em;
+	font-size: 12px;
+	font-style:italic;
+	padding-top: 50px;
+	color:#3897f0;
+
 }
 .author_div{
 	width:260px;
-	height: 120px;
-	background-color: red;
+	height: 80px;
+	background-color: #3897f0;
 	display:flex;
 	justify-content: center;
 
@@ -44,6 +68,16 @@
 	height:130px;
 	justify-content: center;
 	align-items: center;
+	align-items:space-around;
+
+}
+.title{
+	padding-top:50px;
+	padding-left:20px;
+	font-size: 25px;
+	font-style: oblique;
+	color:#3897f0;
+
 }
 .delete_button{
 	border-radius: 3em;
@@ -51,11 +85,14 @@
 	width:50px;
 	justify-content: center;
 	align-items: center;
+	border-color: #3897f0;
+	color: #3897f0;
+  font-size: 10px;
+	background-color: #F5F5F5;
 }
 .delete_div{
 	width:90px;
 	height:90px;
-	background-color: ;
 	display:flex;
 	justify-content: center;
 	align-items: center;
@@ -76,7 +113,7 @@
 	width:200px;
 }
 .year_div{
-	background-color: orange;
+	background-color: #3897f0;
 	width:36px;
 	height:70px;
 	align-content: flex-end;
@@ -93,11 +130,15 @@
 	align-items: center;
 	margin-left: 10px;
 	margin-top:21px;
+	border-color: #3897f0;
+	color: #3897f0;
+	font-size: 10px;
+	background-color: #F5F5F5;
 
 }
 .genere_div{
 	width:200px;
 	height:50px;
-	background-color: green;
+	background-color: #3897f0;
 	margin-top: 18px;
 }
