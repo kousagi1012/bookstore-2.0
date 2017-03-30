@@ -10,7 +10,7 @@ export default class AddBook extends Component {
           title: '',
           year: '',
           author: ''
-        }
+        },
       }
 
       this.handleSubmit = this.handleSubmit.bind( this )
@@ -41,6 +41,7 @@ export default class AddBook extends Component {
             year: '',
             author: ''
           })
+          this.props.hideFormNow()
           // this.context.router.push( redirectURL )
         })
 
@@ -54,23 +55,26 @@ export default class AddBook extends Component {
     render() {
       return (
         <form className="add-book-form" onSubmit={ this.handleSubmit }>
-          <input className="add-book-input" name='genres'
-            onChange={ this.setValue.bind( this, 'genres' ) }
-            placeholder="Book Genre"></input>
-
-          <input className="add-book-input" name='title'
-            onChange={ this.setValue.bind( this, 'title' ) }
-            placeholder="Book Title"></input>
-
-          <input className="add-book-input" name='year'
-            onChange={ this.setValue.bind( this, 'year' ) }
-            placeholder="Book Year"></input>
-
-          <input className="add-book-input" name='author'
-            onChange={ this.setValue.bind( this, 'author' ) }
-            placeholder="Book Author"></input>
-
-          <input type="submit" value="Submit" />
+          <div className="centerForm">
+            <h2 className="formHead">Add a Book</h2>
+          <br /><label>Genre</label><br />
+            <input className="add-book-input" name='genres'
+              onChange={ this.setValue.bind( this, 'genres' ) }
+              placeholder="Book Genre"></input>
+            <br /><label>Title</label><br />
+            <input className="add-book-input" name='title'
+              onChange={ this.setValue.bind( this, 'title' ) }
+              placeholder="Book Title"></input>
+            <br /><label>Year</label><br />
+            <input className="add-book-input" name='year'
+              onChange={ this.setValue.bind( this, 'year' ) }
+              placeholder="Book Year"></input>
+            <br /><label>Author</label><br />
+            <input className="add-book-input" name='author'
+              onChange={ this.setValue.bind( this, 'author' ) }
+              placeholder="Book Author"></input>
+            <input type="submit" value="Submit" />
+          </div>
         </form>
       )
     }
