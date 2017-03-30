@@ -36,7 +36,7 @@ export default class Books extends Component{
       })
     })
     .catch( err => {
-      ('Error loading tasks', err);
+      console.log('Error loading tasks', err);
       return err
       })
     }

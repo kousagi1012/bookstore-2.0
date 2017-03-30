@@ -68,13 +68,11 @@ server.get( '/api/books/:id', ( request, response ) => {
 server.post( '/api/books/:id', ( request, response ) => {
   let{id} = request.params
   let{title,year} = request.body.book
-  ('in routeASFASFSDAFASDFSAF',id, title, year);
   db.updateBook(id,title,year)
     .then( result => response.json( result ))
 })
 
 server.post('/api/books/:id/delete', (request, response) => {
-  ('going to delete book:', request.params.id)
   db.deleteBook( request.params.id )
     .then( () => response.status(200).json())
 })
