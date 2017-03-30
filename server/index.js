@@ -26,6 +26,7 @@ server.post('/api/test/reset-db', (request, response, next) => {
 
 server.post('/api/books', (request, response, next) => {
   if ( request.body.hasOwnProperty("title") ) {
+    request.body.genres= request.body.genres.split(',')
     db.createWholeBook(request.body).then(book => {
       response.status(201).json(book).end
     })

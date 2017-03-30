@@ -33,9 +33,8 @@ export default class Book extends Component {
     .then(result=>{
       this.props.fetchBook()
     })
-
   }
-
+  
   render() {
     return (
         <div className="book">
@@ -69,7 +68,6 @@ export default class Book extends Component {
           </div>
           {this.state.showForm ? <EditForm hideFormNow={this.hideFormNow.bind(this)} bookData={this.props.book}/> : null }
         </div>
-
     )
   }
 }

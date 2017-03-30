@@ -11,20 +11,13 @@ export default class Books extends Component{
     }
  }
 
- // map( book => {
- //   return (
- //     <div>
- //       <h2>{book.title}</h2>
- //     </div>
- //   )
- // } )
-
   componentDidMount(){
     this.fetchBook()
-   }
+  }
+
 
   fetchBook(){
-    const options ={
+    const options = {
       method:'GET',
       mode:'cors',
       headers: new Headers({
@@ -47,8 +40,6 @@ export default class Books extends Component{
       return err
       })
     }
-
-
 
   render(){
 
