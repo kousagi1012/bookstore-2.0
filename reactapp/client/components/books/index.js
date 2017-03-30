@@ -5,7 +5,10 @@ import AddBook from '../addBook/addBook'
 export default class Books extends Component{
   constructor(){
     super()
-    this.state = {books: []}
+    this.state = {
+      books: [],
+      showFormNow:false
+    }
  }
 
   componentDidMount(){
@@ -39,21 +42,29 @@ export default class Books extends Component{
 
   removeBook(){
     let book = this.state.book
-    fetch(`http://localhost:3000/api/books/:id/delete${book.book_id}`, {
+    fetch(`http://localhost:3000/api/books/:${book.book_id}/delete`, {
       method: 'delete',
     })
   }
 
+  showFormNow(){
+    this.setState({showFormNow:true})
+  }
 
+  hideFormNow(){
+    this.setState({showFormNow:false})
+  }
 
   render(){
-
     const books = this.state.books
     const booksJSX = books.map(book => <Book key={book.id} book={book} />)
-    return this.state.books.length == 0 ?
-     <div> Loading data </div>
+
+    return this.state.books.length == 0 ? <div> Loading data </div>
     : <div className="mainContainer">{booksJSX}
-      < AddBook/>
+
+    <button onClick={this.showFormNow.bind(this)} className="add_Book" type="button" >Add Book</button>
+
+    {this.state.showFormNow ? <AddBook hideFormNow={this.hideFormNow.bind(this)}/> : null}
     </div>
   }
 }
