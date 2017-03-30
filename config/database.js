@@ -16,9 +16,10 @@ const deleteBook = (id) => {
   return pgpdb.query(`DELETE from books where id = ${id}; DELETE from book_authors where book_id = ${id}; DELETE from book_genres where book_id = ${id};`)
 }
 
-// const updateBook = (id) => {
-//   return pgpdb.query(`UPDATE from books where id = ${id}; UPDATE books SET title = $1 author = $2 year = $3 geners = $4;`)
-// }
+const updateBook = (id,title,year) => {
+  console.log("TITLE AND YEAR", title, year);
+  return pgpdb.query('UPDATE books SET title = $1,year = $2  WHERE id = $3 ;',[title,year,id])
+}
 
 const createBook = (title, year) => {
   return pgpdb.query('insert into books( title, year ) values($1, $2) returning id', [title, year]).then(result => result[0].id)
@@ -113,7 +114,7 @@ if( year !== undefined ) {
 }
 
 
-query = `${BOOKS_QUERY} ${clauses.length > 0 ? `WHERE ${clauses.join( ' AND ' )}` : ''} LIMIT 10 OFFSET $1`
+query = `${BOOKS_QUERY} ${clauses.length > 0 ? `WHERE ${clauses.join( ' AND ' )}` : ''} ORDER BY title LIMIT 50 OFFSET $1 `
 
 return pgpdb.query( query, params )
 }
@@ -148,4 +149,4 @@ const searchByTitle = id => {
   `)
 }
 
-module.exports = { resetDb, createWholeBook, getBooks, getAuthors, searchByAuthor, searchByTitle, getBook, deleteBook, getGenres }
+module.exports = { resetDb, createWholeBook, getBooks, getAuthors, searchByAuthor, searchByTitle, getBook, deleteBook, getGenres, updateBook }
