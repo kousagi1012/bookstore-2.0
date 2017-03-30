@@ -17,7 +17,7 @@ const deleteBook = (id) => {
 }
 
 const updateBook = (id,title,year) => {
-  console.log("TITLE AND YEAR", title, year);
+  ("TITLE AND YEAR", title, year);
   return pgpdb.query('UPDATE books SET title = $1,year = $2  WHERE id = $3 ;',[title,year,id])
 }
 
@@ -54,7 +54,7 @@ const createWholeBook = book => {
       })
     )
   ]).then(results => {
-    console.log('results++++++++', results)
+    ('results++++++++', results)
     const bookId = results[0]
     const authorId = results[1]
     const genreIds = results[2]

@@ -3,7 +3,7 @@ import './addBook.css'
 
 export default class AddBook extends Component {
   constructor( props ) {
-    super( props ) {
+    super( props ) 
       this.state = {
         book: {
           genres: '',

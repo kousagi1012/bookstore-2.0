@@ -39,8 +39,8 @@ export default class EditForm extends Component{
 
 sendEditBook(event){
   event.preventDefault()
-  console.log('event function');
-  console.log(this);
+  ('event function');
+  (this);
   let book = this.state
   const options ={
     method:'POST',

@@ -9,16 +9,19 @@ export default class Book extends Component {
       showForm: false
     }
   }
+
   showFormNow(){
     this.setState({showForm: true})
   }
+
   hideFormNow(){
     this.setState({showForm: false})
   }
+
   deleteBook(event){
     event.preventDefault()
-    console.log('event function');
-    console.log('props',this.props);
+    ('event function');
+    ('props',this.props);
     let book = this.props.book
     const options ={
       method:'POST',
@@ -34,7 +37,7 @@ export default class Book extends Component {
       this.props.fetchBook()
     })
   }
-  
+
   render() {
     return (
         <div className="book">
