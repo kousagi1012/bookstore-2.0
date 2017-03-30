@@ -4,7 +4,11 @@ import Book from '../book/index'
 export default class Books extends Component{
   constructor(){
     super()
-    this.state = {books: []}
+    this.state = {
+      books: [],
+
+
+    }
  }
 
  // map( book => {
@@ -47,11 +51,11 @@ export default class Books extends Component{
 
 
   render(){
-    
+
     const books = this.state.books
-    const booksJSX = books.map(book => <Book book={book} />)
+    const booksJSX = books.map((book, key) => <Book key={key} fetchBook={this.fetchBook.bind(this)} book={book} />)
     return this.state.books.length == 0 ?
-     <div> Loading data </div>
+     <div> Loading data .. </div>
     : <div className="mainContainer">{booksJSX}</div>
   }
 }
