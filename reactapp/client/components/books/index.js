@@ -5,12 +5,16 @@ import AddBook from '../addBook/addBook'
 export default class Books extends Component{
   constructor(){
     super()
-    this.state = {books: []}
+    this.state = {books: [], showFormStatus: false}
  }
 
   componentDidMount(){
     this.fetchBook()
-   }
+  }
+
+  showForm() {
+    this.setState({showFormStatus: true})
+  }
 
   fetchBook(){
     const options = {
