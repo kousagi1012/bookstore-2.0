@@ -3,7 +3,7 @@ import './addBook.css'
 
 export default class AddBook extends Component {
   constructor( props ) {
-    super( props )
+    super( props ) {
       this.state = {
         book: {
           genres: '',
@@ -12,13 +12,13 @@ export default class AddBook extends Component {
           author: ''
         },
       }
-
       this.handleSubmit = this.handleSubmit.bind( this )
     }
 
     handleSubmit( event ) {
       event.preventDefault()
       let book = this.state.book
+
 
       let options = {
         method: 'POST',
@@ -43,8 +43,7 @@ export default class AddBook extends Component {
           })
           this.props.hideFormNow()
           // this.context.router.push( redirectURL )
-        })
-
+      })
     }
     setValue( field, event ) {
       let book = this.state.book
@@ -79,7 +78,3 @@ export default class AddBook extends Component {
       )
     }
   }
-
-  // AddBook.contextTypes = {
-  //   router: React.PropTypes.object.isRequired
-  // }

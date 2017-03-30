@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Book from '../book/index'
-import AddBook from '../addBook/addBook'
 
 export default class Books extends Component{
   constructor(){
@@ -13,7 +12,8 @@ export default class Books extends Component{
 
   componentDidMount(){
     this.fetchBook()
-   }
+  }
+
 
   fetchBook(){
     const options = {
@@ -40,12 +40,6 @@ export default class Books extends Component{
       })
     }
 
-  removeBook(){
-    let book = this.state.book
-    fetch(`http://localhost:3000/api/books/:${book.book_id}/delete`, {
-      method: 'delete',
-    })
-  }
 
   showFormNow(){
     this.setState({showFormNow:true})
