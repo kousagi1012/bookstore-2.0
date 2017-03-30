@@ -6,8 +6,7 @@ export default class Books extends Component{
     super()
     this.state = {
       books: [],
-
-
+      showFormNow:false
     }
  }
 
@@ -41,12 +40,25 @@ export default class Books extends Component{
       })
     }
 
-  render(){
 
+  showFormNow(){
+    this.setState({showFormNow:true})
+  }
+
+  hideFormNow(){
+    this.setState({showFormNow:false})
+  }
+
+  render(){
     const books = this.state.books
-    const booksJSX = books.map((book, key) => <Book key={key} fetchBook={this.fetchBook.bind(this)} book={book} />)
-    return this.state.books.length == 0 ?
-     <div> Loading data .. </div>
-    : <div className="mainContainer">{booksJSX}</div>
+    const booksJSX = books.map(book => <Book key={book.id} book={book} />)
+
+    return this.state.books.length == 0 ? <div> Loading data </div>
+    : <div className="mainContainer">{booksJSX}
+
+    <button onClick={this.showFormNow.bind(this)} className="add_Book" type="button" >Add Book</button>
+
+    {this.state.showFormNow ? <AddBook hideFormNow={this.hideFormNow.bind(this)}/> : null}
+    </div>
   }
 }
