@@ -1,19 +1,12 @@
 import React, { Component } from 'react'
 import Book from '../book/index'
+import AddBook from '../addBook/addBook'
 
 export default class Books extends Component{
   constructor(){
     super()
     this.state = {books: [], showFormStatus: false}
  }
-
- // map( book => {
- //   return (
- //     <div>
- //       <h2>{book.title}</h2>
- //     </div>
- //   )
- // } )
 
   componentDidMount(){
     this.fetchBook()
@@ -24,7 +17,7 @@ export default class Books extends Component{
   }
 
   fetchBook(){
-    const options ={
+    const options = {
       method:'GET',
       mode:'cors',
       headers: new Headers({
@@ -48,14 +41,23 @@ export default class Books extends Component{
       })
     }
 
+  removeBook(){
+    let book = this.state.book
+    fetch(`http://localhost:3000/api/books/:id/delete${book.book_id}`, {
+      method: 'delete',
+    })
+  }
+
 
 
   render(){
-    
+
     const books = this.state.books
-    const booksJSX = books.map((book, key) => <Book showForm={() => this.showForm.bind(this)} showFormStatus={this.state.showFormStatus} book={book} key={key}/>)
+    const booksJSX = books.map(book => <Book key={book.id} book={book} />)
     return this.state.books.length == 0 ?
      <div> Loading data </div>
-    : <div className="mainContainer">{booksJSX}</div>
+    : <div className="mainContainer">{booksJSX}
+      < AddBook/>
+    </div>
   }
 }
