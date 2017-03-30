@@ -65,19 +65,13 @@ server.get( '/api/books/:id', ( request, response ) => {
     .catch( error => response.status( 404 ).json() )
 })
 
-// server.post( '/api/books/:id', ( request, response ) => {
-//   console.log( request.body, request.params.id )
-//   response.json({ error: false })
-//   // What are the things we need to do?
-//     // Get input - title, author, year, id
-//     // Update book id with title and year
-//     // Then update book authors with author
-//       // delete everything in book_authors with this book id
-//       // ensure that the authors exist in the authors
-//       // get all the ids now for the authors
-//       // insert the book id/author ids into book_authors
-//     // Then fetch the book again to return to client
-// })
+server.post( '/api/books/:id', ( request, response ) => {
+  let{id} = request.params
+  let{title,year} = request.body.book
+  console.log('in routeASFASFSDAFASDFSAF',id, title, year);
+  db.updateBook(id,title,year)
+    .then( result => response.json( result ))
+})
 
 server.post('/api/books/:id/delete', (request, response) => {
   console.log('going to delete book:', request.params.id)
